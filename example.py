@@ -1,6 +1,3 @@
-from unicodedata import name
-
-
 def dividir(dividendo, divisor):
     return dividendo // divisor
 
