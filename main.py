@@ -29,7 +29,7 @@ class ContaCorrente:
 
     def __set_agencia(self, value):
         if not isinstance(value, int):
-            raise ValueError('O atributo agencia deve ser um inteiro')
+            raise ValueError('O atributo agencia deve ser um inteiro', value)
         if value <= 0:
             raise ValueError('O atributo agencia deve ser maior do que zero')
 
@@ -75,8 +75,8 @@ def main():
     while True:
         try:
             nome = input("Nome do cliente: \n")
-            agencia = input("Número da agência: \n")
-            numero = input("Número da conta corrente: \n")
+            agencia = int(input("Número da agência: \n"))
+            numero = int(input("Número da conta corrente: \n"))
 
             cliente = Cliente(nome, None, None)
             conta_corrente = ContaCorrente(cliente, agencia, numero)
